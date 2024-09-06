@@ -12,7 +12,6 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "tb_game")
 public class Game {
-  // forma de identificar a chave primária
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -26,13 +25,16 @@ public class Game {
     private String imgUrl;
 
 
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
 
-
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
 
     public Game() {
     }
+
+
 
     public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
                 String shortDescription, String longDescription) {
